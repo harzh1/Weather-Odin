@@ -3,7 +3,7 @@ export default function api() {
 
   async function getWeather(city) {
     const response = await fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=${key}&q=${city}&days=4`,
+      `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${city}&days=4`,
       {
         mode: "cors",
       }
