@@ -357,7 +357,7 @@ locationNameDiv.classList.add("location-name-div");
 
 const locationName = document.createElement("p");
 locationName.classList.add("location-name");
-locationName.textContent = "";
+locationName.textContent = "Dhanbad, Jharkhand, India";
 
 locationNameDiv.appendChild(locationName);
 
