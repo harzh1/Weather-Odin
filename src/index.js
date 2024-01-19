@@ -140,23 +140,6 @@ async function firstCall() {
   forecastDay2MaxWindSpeed.textContent = `Wind: ${Math.round(
     data.forecast.forecastday[2].day.maxwind_kph
   )}km/h`;
-
-  forecastDay3Date.textContent = format(
-    new Date(data.forecast.forecastday[3].date),
-    "EEEE"
-  );
-  forecastDay3Temp.textContent = `${Math.round(
-    data.forecast.forecastday[3].day.avgtemp_c
-  )}°C`;
-  forecastDay3MinTemp.textContent = `Min temp: ${Math.round(
-    data.forecast.forecastday[3].day.mintemp_c
-  )}°C`;
-  forecastDay3MaxTemp.textContent = `Max temp: ${Math.round(
-    data.forecast.forecastday[3].day.maxtemp_c
-  )}°C`;
-  forecastDay3MaxWindSpeed.textContent = `Wind: ${Math.round(
-    data.forecast.forecastday[3].day.maxwind_kph
-  )}km/h`;
 }
 
 async function onSubmit() {
@@ -221,23 +204,6 @@ async function onSubmit() {
     data.forecast.forecastday[2].day.maxwind_kph
   )}km/h`;
 
-  forecastDay3Date.textContent = format(
-    new Date(data.forecast.forecastday[3].date),
-    "EEEE"
-  );
-  forecastDay3Temp.textContent = `${Math.round(
-    data.forecast.forecastday[3].day.avgtemp_c
-  )}°C`;
-  forecastDay3MinTemp.textContent = `Min temp: ${Math.round(
-    data.forecast.forecastday[3].day.mintemp_c
-  )}°C`;
-  forecastDay3MaxTemp.textContent = `Max temp: ${Math.round(
-    data.forecast.forecastday[3].day.maxtemp_c
-  )}°C`;
-  forecastDay3MaxWindSpeed.textContent = `Wind: ${Math.round(
-    data.forecast.forecastday[3].day.maxwind_kph
-  )}km/h`;
-
   search.value = "";
 }
 
@@ -279,16 +245,6 @@ toggleButtonCelcius.addEventListener("click", () => {
     data.forecast.forecastday[2].day.maxtemp_c
   )}°C`;
 
-  forecastDay3Temp.textContent = `${Math.round(
-    data.forecast.forecastday[3].day.avgtemp_c
-  )}°C`;
-  forecastDay3MinTemp.textContent = `Min temp: ${Math.round(
-    data.forecast.forecastday[3].day.mintemp_c
-  )}°C`;
-  forecastDay3MaxTemp.textContent = `Max temp: ${Math.round(
-    data.forecast.forecastday[3].day.maxtemp_c
-  )}°C`;
-
   wind.textContent = `${Math.round(data.current.wind_kph)}kph`;
   visibility.textContent = `${data.current.vis_km}km`;
 
@@ -298,10 +254,6 @@ toggleButtonCelcius.addEventListener("click", () => {
 
   forecastDay2MaxWindSpeed.textContent = `Wind: ${Math.round(
     data.forecast.forecastday[2].day.maxwind_kph
-  )} km/h`;
-
-  forecastDay3MaxWindSpeed.textContent = `Wind: ${Math.round(
-    data.forecast.forecastday[3].day.maxwind_kph
   )} km/h`;
 
   toggleButtonCelcius.classList.add("active");
@@ -340,16 +292,6 @@ toggleButtonFahrenheit.addEventListener("click", () => {
     data.forecast.forecastday[2].day.maxtemp_f
   )}°F`;
 
-  forecastDay3Temp.textContent = `${Math.round(
-    data.forecast.forecastday[3].day.avgtemp_f
-  )}°F`;
-  forecastDay3MinTemp.textContent = `Min temp: ${Math.round(
-    data.forecast.forecastday[3].day.mintemp_f
-  )}°F`;
-  forecastDay3MaxTemp.textContent = `Max temp: ${Math.round(
-    data.forecast.forecastday[3].day.maxtemp_f
-  )}°C`;
-
   wind.textContent = `${Math.round(data.current.wind_mph)}mph`;
   visibility.textContent = `${data.current.vis_miles} miles`;
 
@@ -359,10 +301,6 @@ toggleButtonFahrenheit.addEventListener("click", () => {
 
   forecastDay2MaxWindSpeed.textContent = `Wind: ${Math.round(
     data.forecast.forecastday[2].day.maxwind_mph
-  )} miles/h`;
-
-  forecastDay3MaxWindSpeed.textContent = `Wind: ${Math.round(
-    data.forecast.forecastday[3].day.maxwind_mph
   )} miles/h`;
 
   toggleButtonFahrenheit.classList.add("active");
@@ -516,7 +454,7 @@ forecastDiv.classList.add("forecast-div");
 
 const forecastTitle = document.createElement("p");
 forecastTitle.classList.add("forecast-title");
-forecastTitle.textContent = "3 Days Forecast";
+forecastTitle.textContent = "2 Days Forecast";
 
 const forecast = document.createElement("div");
 forecast.classList.add("forecast");
@@ -579,38 +517,8 @@ forecastDay2.appendChild(forecastDay2MinTemp);
 forecastDay2.appendChild(forecastDay2MaxTemp);
 forecastDay2.appendChild(forecastDay2MaxWindSpeed);
 
-const forecastDay3 = document.createElement("div");
-forecastDay3.classList.add("forecast-days");
-
-const forecastDay3Date = document.createElement("p");
-forecastDay3Date.classList.add("forecast-day");
-forecastDay3Date.textContent = "";
-
-const forecastDay3Temp = document.createElement("p");
-forecastDay3Temp.classList.add("forecast-day-temp");
-forecastDay3Temp.textContent = "";
-
-const forecastDay3MinTemp = document.createElement("p");
-forecastDay3MinTemp.classList.add("forecast-day-min-temp");
-forecastDay3MinTemp.textContent = "Min Temp: ";
-
-const forecastDay3MaxTemp = document.createElement("p");
-forecastDay3MaxTemp.classList.add("forecast-day-max-temp");
-forecastDay3MaxTemp.textContent = "Max Temp: ";
-
-const forecastDay3MaxWindSpeed = document.createElement("p");
-forecastDay3MaxWindSpeed.classList.add("forecast-day-max-wind-speed");
-forecastDay3MaxWindSpeed.textContent = "Wind: ";
-
-forecastDay3.appendChild(forecastDay3Date);
-forecastDay3.appendChild(forecastDay3Temp);
-forecastDay3.appendChild(forecastDay3MinTemp);
-forecastDay3.appendChild(forecastDay3MaxTemp);
-forecastDay3.appendChild(forecastDay3MaxWindSpeed);
-
 forecast.appendChild(forecastDay1);
 forecast.appendChild(forecastDay2);
-forecast.appendChild(forecastDay3);
 
 forecastDiv.appendChild(forecastTitle);
 forecastDiv.appendChild(forecast);
